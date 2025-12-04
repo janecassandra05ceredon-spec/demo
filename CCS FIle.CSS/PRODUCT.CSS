@@ -1,0 +1,249 @@
+
+@import url('https://fonts.cdnfonts.com/css/comfort-zone');
+
+:root {
+    --coffee-dark: #3E2723;
+    --coffee-medium: #6F4E37;
+    --coffee-light: #C4A484;
+    --coffee-gold: #D4AF37;
+    --text-dark: #2C2416;
+    --text-light: #f3f3f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jomolhari', sans-serif;
+    background: var(--coffee-light);
+    color: var(--text-dark);
+}
+
+/* Header */
+
+.continer {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        header {
+            background: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .header-container .logo img {
+            display: flex;
+            align-items: center;
+            width: 90px;
+            height: auto;
+            margin-left: 20px;
+        }
+nav ul { 
+    display:flex;
+     list-style:none;
+      gap:35px;
+     }
+
+nav a {
+     text-decoration:none;
+      color:var(--coffee-medium);
+       font-weight:600;
+     }
+
+.nav-buttons {
+     display:flex;
+      gap:15px;
+     }
+
+.btn {
+     padding:8px 20px;
+      border-radius:30px;
+       text-decoration:none;
+        font-weight:600;
+         transition:all 0.3s ease;
+          border:none;
+         }
+
+.btn-primary {
+     background:var(--coffee-medium);
+      color:white;
+     }
+.btn-primary:hover {
+     background:var(--coffee-dark);
+      transform:translateY(-3px);
+     }
+.btn-secondary {
+     background:transparent;
+      color:var(--coffee-medium);
+       border:2px solid var(--coffee-medium);
+    }
+.btn-secondary:hover {
+     background:rgba(111,78,55,0.05);
+      transform:translateY(-3px);
+     }
+
+/* Products Section */
+.products-section {
+    padding: 120px 20px 50px; /* top padding to avoid header overlap */
+    text-align: center;
+}
+
+.products-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.products-section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card img {
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: Comfort Zone;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.button a{
+    background: var(--coffee-gold);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.product-card button:hover {
+    background: var(--coffee-dark);
+    transform: scale(1.05);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background: var(--coffee-dark);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none; /* hidden on desktop */
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        display: none;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1100;
+    }
+
+    /* Show menu when checkbox is checked */
+    #menu-toggle:checked ~ nav ul {
+        display: flex;
+    }
+    header {
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    position: relative;  /* added */
+    }
+}
+

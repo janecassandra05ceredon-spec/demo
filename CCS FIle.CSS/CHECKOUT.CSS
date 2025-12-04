@@ -1,0 +1,217 @@
+:root {
+    --coffee-dark: #3E2723;
+    --coffee-medium: #6F4E37;
+    --coffee-light: #C4A484;
+    --coffee-accent: #D2B48c;
+    --coffee-cream: #F5F5DC;
+    --coffee-gold: #D4AF37;
+    --text-dark: #2C2416;
+    --text-light: #f3f3f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--coffee-cream);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+.continer {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        header {
+            background: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .header-container .logo img {
+            display: flex;
+            align-items: center;
+            width: 90px;
+            height: auto;
+            margin-left: 20px;
+        }
+nav ul { 
+    display:flex;
+     list-style:none;
+      gap:35px;
+     }
+
+nav a {
+     text-decoration:none;
+      color:var(--coffee-medium);
+       font-weight:600;
+     }
+
+.nav-buttons {
+     display:flex;
+      gap:15px;
+     }
+
+.btn {
+     padding:8px 20px;
+      border-radius:30px;
+       text-decoration:none;
+        font-weight:600;
+         transition:all 0.3s ease;
+          border:none;
+         }
+
+.btn-primary {
+     background:var(--coffee-medium);
+      color:white;
+     }
+.btn-primary:hover {
+     background:var(--coffee-dark);
+      transform:translateY(-3px);
+     }
+.btn-secondary {
+     background:transparent;
+      color:var(--coffee-medium);
+       border:2px solid var(--coffee-medium);
+    }
+.btn-secondary:hover {
+     background:rgba(111,78,55,0.05);
+      transform:translateY(-3px);
+     }
+
+main {
+    max-width: 600px;
+    margin: 200px auto 0 auto;
+    padding: 20px;
+    border: 6px double #000000; 
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none; 
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        display: none;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1100;
+    }
+
+    /* Show menu when checkbox is checked */
+    #menu-toggle:checked ~ nav ul {
+        display: flex;
+    }
+    header {
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    position: relative;  /* added */
+    }
+}
+

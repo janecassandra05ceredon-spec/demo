@@ -1,0 +1,241 @@
+:root {
+  --coffee-dark:#3E2723;
+  --coffee-medium:#6F4E37;
+  --coffee-light:#C4A484;
+  --coffee-gold:#D4AF37;
+  --text-dark:#2C2416;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Jomolhari', sans-serif;
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
+
+.continer {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        header {
+            background: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .header-container .logo img {
+            display: flex;
+            align-items: center;
+            width: 90px;
+            height: auto;
+            margin-left: 20px;
+        }
+nav ul { 
+    display:flex;
+     list-style:none;
+      gap:35px;
+     }
+
+nav a {
+     text-decoration:none;
+      color:var(--coffee-medium);
+       font-weight:600;
+     }
+
+.nav-buttons {
+     display:flex;
+      gap:15px;
+     }
+
+.btn {
+     padding:8px 20px;
+      border-radius:30px;
+       text-decoration:none;
+        font-weight:600;
+         transition:all 0.3s ease;
+          border:none;
+         }
+
+.btn-primary {
+     background:var(--coffee-medium);
+      color:white;
+     }
+.btn-primary:hover {
+     background:var(--coffee-dark);
+      transform:translateY(-3px);
+     }
+.btn-secondary {
+     background:transparent;
+      color:var(--coffee-medium);
+       border:2px solid var(--coffee-medium);
+    }
+.btn-secondary:hover {
+     background:rgba(111,78,55,0.05);
+      transform:translateY(-3px);
+     }
+/* ABOUT SECTION */
+.about-section {
+    padding: 80px 20px;
+    background: #f7f7f7;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.about-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-cards .card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-cards .card i {
+    color: var(--coffee-gold);
+    margin-bottom: 15px;
+}
+
+.about-cards .card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #333;
+}
+
+.about-cards .card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.about-cards .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer {
+    background: var(--coffee-dark);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 150px;
+}
+/* Video at the bottom */
+.hero-bottom {
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px; 
+    overflow: hidden;
+    z-index: -1; 
+}
+
+.hero-bottom video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    align-content: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none; 
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        display: none;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1100;
+    }
+
+    /* Show menu when checkbox is checked */
+    #menu-toggle:checked ~ nav ul {
+        display: flex;
+    }
+    header {
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    position: relative;  /* added */
+    }
+}
+

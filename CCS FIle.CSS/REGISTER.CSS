@@ -1,0 +1,287 @@
+:root {
+    --coffee-dark: #3E2723;
+    --coffee-medium: #6F4E37;
+    --coffee-light: #C4A484;
+    --coffee-accent: #D2B48c;
+    --coffee-cream: #F5F5DC;
+    --coffee-gold: #D4AF37;
+    --text-dark: #2C2416;
+    --text-light: #f3f3f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--coffee-cream);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+.continer {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        header {
+            background: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .header-container .logo img {
+            display: flex;
+            align-items: center;
+            width: 90px;
+            height: auto;
+            margin-left: 20px;
+        }
+nav ul { 
+    display:flex;
+     list-style:none;
+      gap:35px;
+     }
+
+nav a {
+     text-decoration:none;
+      color:var(--coffee-medium);
+       font-weight:600;
+     }
+
+.nav-buttons {
+     display:flex;
+      gap:15px;
+     }
+
+.btn {
+     padding:8px 20px;
+      border-radius:30px;
+       text-decoration:none;
+        font-weight:600;
+         transition:all 0.3s ease;
+          border:none;
+         }
+
+.btn-primary {
+     background:var(--coffee-medium);
+      color:white;
+     }
+.btn-primary:hover {
+     background:var(--coffee-dark);
+      transform:translateY(-3px);
+     }
+.btn-secondary {
+     background:transparent;
+      color:var(--coffee-medium);
+       border:2px solid var(--coffee-medium);
+    }
+.btn-secondary:hover {
+     background:rgba(111,78,55,0.05);
+      transform:translateY(-3px);
+     }
+.main-container {
+    display: flex;               /* side-by-side layout */
+    gap: 40px;                   /* space between form and video */
+    margin-top: 200px;           /* space below header */
+    max-width: 2000px;           /* wide enough for form + video */
+    width: 100%;
+    padding: 0 20px;
+    justify-content: center;     /* center the whole container */
+    align-items: flex-start;
+    flex-wrap: nowrap;           /* prevent wrapping */
+}
+
+    /* Form container */
+    .register-container {
+        background-color: #fff;
+        padding: 50px 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        flex: 1;
+        min-width: 300px;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .register-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 28px;
+        color: #6F4E37;
+    }
+
+    .register-container label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .register-container input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .register-container input:focus {
+        border-color: #6F4E37;
+        outline: none;
+        box-shadow: 0 0 5px rgba(111,78,55,0.5);
+        transition: 0.3s;
+    }
+
+    .register-container button {
+        width: 100%;
+        padding: 15px;
+        background-color: #6F4E37;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .register-container button:hover {
+        background-color: #5a3d2e;
+        transform: scale(1.03);
+    }
+
+    .login-link {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .login-link a {
+        color: #6F4E37;
+        text-decoration: none;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+/* Video container */
+.video-container {
+    width: 1150px;               /* fixed width for video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;          /* hidden on desktop */
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    position: fixed;        /* float independently */
+    top: 20px;              /* distance from top */
+    right: 20px;            /* distance from right */
+    z-index: 1100;          /* above everything */
+    background: var(--coffee-cream);
+    padding: 10px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+    background: var(--coffee-gold);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .video-container {
+        width: 100%;             /* shrink to fit smaller screen */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        display: none;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1100;
+        color: black;
+    }
+
+    /* Show menu when checkbox is checked */
+    #menu-toggle:checked ~ nav ul {
+        display: flex;
+    }
+    header {
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+}
+
+
+
